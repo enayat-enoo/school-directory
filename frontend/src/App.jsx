@@ -1,21 +1,18 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AddSchool from "./pages/AddSchool";
 import ShowSchools from "./pages/ShowSchools";
 import { NavLink } from "react-router-dom";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Router>
-
       <nav className="bg-blue-600 p-4 text-white shadow-md">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-  
           <h1 className="text-xl font-bold">School Directory</h1>
-
 
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -70,7 +67,6 @@ function App() {
           </div>
         </div>
 
-     
         {isOpen && (
           <div className="md:hidden mt-4 flex flex-col gap-4">
             <NavLink
@@ -99,10 +95,11 @@ function App() {
           </div>
         )}
       </nav>
-      <ToastContainer position="top-center"/>
+      <ToastContainer position="top-center" />
       <Routes>
         <Route path="/add" element={<AddSchool />} />
         <Route path="/schools" element={<ShowSchools />} />
+        <Route path="/" element={<ShowSchools />} />
       </Routes>
     </Router>
   );
