@@ -2,24 +2,15 @@
 const express = require("express");
 const multer = require("multer");
 const db = require("../db");
-const path = require("path");
+const { storage } = require("../cloudinary");
 
 const router = express.Router();
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "../uploads"));
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + "-" + file.originalname);
-  },
-});
 
 const upload = multer({ storage });
 
 router.post("/add", upload.single("image"), (req, res) => {
   const { name, address, city, state, contact, email_id } = req.body;
-  const image = req.file ? req.file.filename : null;
+  const image = req.file ? req.file.path : null;
 
   const sql =
     "INSERT INTO schools (name, address, city, state, contact, email_id, image) VALUES (?, ?, ?, ?, ?, ?, ?)";

@@ -19,7 +19,7 @@ function ShowSchools() {
         {schools.map((school) => (
           <div key={school.id} className="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transition">
             <img
-              src={`${API_URL}/uploads/${school.image}`}
+              src={school.image}
               alt={school.name}
               className="h-40 w-full object-cover rounded-md mb-4"
             />
