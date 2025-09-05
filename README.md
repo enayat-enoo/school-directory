@@ -1,9 +1,13 @@
-📚 School Directory
+## 📚School Directory
 
 A mini full-stack project built with React (frontend), Node.js + Express (backend), and MySQL (database).
 This app allows users to add school details and view them in a directory-style layout, similar to an e-commerce product listing.
 
-🚀 Features
+## Live Demo
+
+[Frontend](https://school-directory-tau.vercel.app/)
+
+## 🚀 Features
 
 Add new schools with:
 
@@ -21,15 +25,18 @@ Fully responsive design (desktop & mobile)
 
 REST API built with Express.js
 
-🏗️ Tech Stack
+## 🏗️ Tech Stack
 
 Frontend: React, React Hook Form, Axios, React Router DOM
 Backend: Node.js, Express.js, Multer, MySQL2
 Database: MySQL
-Hosting:
 
-Frontend → Netlify / Vercel
 
-Backend → Render / Railway
+## Hosting
+Frontend → Vercel
 
-Database → Local MySQL
+Backend →  Railway
+
+Database → Aiven MySQL
+
+Image Storage → Cloudinary
